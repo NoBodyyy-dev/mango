@@ -64,3 +64,10 @@ cd site && python3 -m http.server 8080
 - Проверить у юриста раздел «Персональные данные»
 - Согласовать публикацию кейса ПлатОН, если по нему есть NDA
 - `favicon`, `og:image`, `robots.txt`, `sitemap.xml`, Метрика
+
+## GitHub Pages
+
+Сайт подготовлен к публикации из ветки `main`, папки `/ (root)`.
+В настройках репозитория: Settings → Pages → Deploy from a branch → main → / (root) → Save.
+Адрес после публикации: https://nobodyyy-dev.github.io/mango/
+Файл `.nojekyll` отключает обработку Jekyll для статического сайта.

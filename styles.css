@@ -1,3 +1,5 @@
+@font-face{font-family:"Unbounded";src:url("assets/fonts/Unbounded.ttf") format("truetype");font-style:normal;font-weight:200 900;font-display:swap}
+
 /* ══════════════════════════════════════════════════════════
    Манго — сайт студии. Зелёная тема бренда, одна на все страницы.
    Акцент один: манго #FF8A2A. Радиусы: карточки 24px, кнопки и чипы — пилюля.
@@ -106,7 +108,7 @@ body::after{
 .head.scrolled{background:rgba(7,32,23,.78);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-color:var(--line)}
 .head.hidden{transform:translateY(-100%)}
 .head-in{display:flex;align-items:center;gap:24px;height:var(--head-h)}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 22px/1.1 var(--f-brand);letter-spacing:-.055em}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 22px/1.1 var(--f-brand);letter-spacing:-.045em}
 .brand svg{flex-shrink:0;transition:transform .6s var(--ease)}
 .brand:hover svg{transform:rotate(-18deg) scale(1.08)}
 .nav{display:flex;gap:2px;margin-left:auto;position:relative}

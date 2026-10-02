@@ -20,7 +20,7 @@ DEFS='''<svg width="0" height="0" aria-hidden="true" focusable="false" style="po
 </svg>'''
 
 NAV=[('index.html','Главная'),('prices.html','Цены'),('projects.html','Проекты'),('legal.html','Юридическая информация')]
-TG='href="https://t.me/mango_studio" data-tg'
+TG='href="https://t.me/mango_moderation" data-tg'
 
 def head(title,desc):
     return f'''<!doctype html>
@@ -93,8 +93,10 @@ FOOT=f'''<footer class="foot">
       <div>
         <h3>Связаться</h3>
         <ul>
-          <li><a {TG}>Telegram: <span data-tg-name>@mango_studio</span></a></li>
-          <li><a href="https://wa.me/79000000000" data-wa>WhatsApp</a></li>
+          <li><a {TG}>Telegram: <span data-tg-name>@mango_moderation</span></a></li>
+          <li><a href="tel:+79151633540">+7 915 163 35 40</a></li>
+          <li><a href="https://wa.me/79151633540" data-wa>WhatsApp</a></li>
+          <li><a href="https://t.me/mango_studio_tech" target="_blank" rel="noopener">Telegram-канал студии</a></li>
           <li><a href="mailto:hello@mango.io">hello@mango.io</a></li>
         </ul>
       </div>
@@ -115,15 +117,16 @@ FOOT=f'''<footer class="foot">
     <div class="messengers">
       <a class="msg" {TG} target="_blank" rel="noopener">
         <span class="mi"><i class="ph-fill ph-telegram-logo" aria-hidden="true"></i></span>
-        <span><b>Telegram</b><small data-tg-name>@mango_studio</small></span>
+        <span><b>Telegram</b><small data-tg-name>@mango_moderation</small></span>
         <i class="ph ph-arrow-right arr" aria-hidden="true"></i>
       </a>
-      <a class="msg" href="https://wa.me/79000000000" data-wa target="_blank" rel="noopener">
+      <a class="msg" href="https://wa.me/79151633540" data-wa target="_blank" rel="noopener">
         <span class="mi"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i></span>
         <span><b>WhatsApp</b><small>Откроется чат с готовым сообщением</small></span>
         <i class="ph ph-arrow-right arr" aria-hidden="true"></i>
       </a>
     </div>
+    <p class="modal-foot">Позвонить: <a href="tel:+79151633540">+7 915 163 35 40</a></p>
     <p class="modal-foot">Удобнее почтой? <a href="mailto:hello@mango.io">hello@mango.io</a></p>
   </div>
 </dialog>
@@ -131,7 +134,7 @@ FOOT=f'''<footer class="foot">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="app.js?v=7"></script>
+<script src="app.js?v=8"></script>
 </body>
 </html>
 '''

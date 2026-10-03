@@ -245,25 +245,6 @@ index_body=f'''<section class="hero">
   </div>
 </section>
 
-<section class="sec">
-  <div class="wrap pin-split">
-    <div class="split-pin">
-      <div class="chips"><span class="chip chip-acc">В разработке</span><span class="chip">Онлайн-образование</span></div>
-      <h2 class="split" style="margin-top:24px">ПлатОН</h2>
-      <p class="lede">Платформа для репетиторов. Уроки, домашние задания, тесты и чат в одном месте вместо пяти сервисов.</p>
-      <a class="btn btn-ghost" href="projects.html">Подробнее о проекте<i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-    </div>
-    <div class="feat-list" data-stagger>
-      <div class="feat"><i class="ph ph-video-camera" aria-hidden="true"></i><div><h3>Видеоуроки с общей доской</h3><p>Преподаватель и ученик рисуют на одной доске прямо во время занятия.</p></div></div>
-      <div class="feat"><i class="ph ph-exam" aria-hidden="true"></i><div><h3>Задания и тесты</h3><p>Выдача, сдача и автопроверка тестов с подсчётом баллов.</p></div></div>
-      <div class="feat"><i class="ph ph-chats-circle" aria-hidden="true"></i><div><h3>Чат в реальном времени</h3><p>История переписки и статусы прочтения.</p></div></div>
-      <div class="feat"><i class="ph ph-seal-check" aria-hidden="true"></i><div><h3>Проверка по ИНН</h3><p>Самозанятость преподавателя подтверждается через ФНС автоматически.</p></div></div>
-      <div class="feat"><i class="ph ph-device-mobile" aria-hidden="true"></i><div><h3>Веб и мобильное приложение</h3><p>Одна система для браузера, iOS и Android.</p></div></div>
-      <div class="feat"><i class="ph ph-bell-ringing" aria-hidden="true"></i><div><h3>Telegram-бот</h3><p>Напоминает о занятиях и домашних заданиях.</p></div></div>
-    </div>
-  </div>
-</section>
-
 <section class="sec" style="padding-top:0">
   <div class="wrap">
     <h2 class="split sec-title">Как начинаем работу</h2>
@@ -344,47 +325,13 @@ projects_body=f'''<section class="page-hero">
   <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
     <h1 class="split">Проекты</h1>
-    <p class="lede" data-reveal>Показываем то, что сделали сами, с реальным стеком и без приукрашенных цифр.</p>
+    <p class="lede" data-reveal>Обновляем портфолио. Примеры работ под вашу задачу покажем лично на бесплатном созвоне.</p>
     <div class="ripen"></div>
   </div>
 </section>
-
-<section class="sec" style="padding-top:clamp(32px,4vw,56px);padding-bottom:0">
-  <div class="wrap">
-    <div class="case-hero">
-      <h2 class="split">ПлатОН</h2>
-      <div class="chips" data-reveal><span class="chip chip-acc">В активной разработке</span><span class="chip">SaaS</span><span class="chip">Онлайн-образование</span></div>
-    </div>
-    <div class="case-intro">
-      <p class="lede" data-reveal>Российская платформа для репетиторов. Занятия в прямом эфире, домашние задания, тесты, чат и дневник ученика в одном месте вместо пяти разных сервисов.</p>
-      <dl class="kv" data-stagger>
-        <div><dt>Роль</dt><dd>Продукт целиком</dd></div>
-        <div><dt>Платформы</dt><dd>Веб, iOS, Android, Telegram</dd></div>
-        <div><dt>Что делали</dt><dd>Дизайн, фронтенд, бэкенд, инфраструктура</dd></div>
-        <div><dt>Стадия</dt><dd>В разработке</dd></div>
-      </dl>
-    </div>
-  </div>
-  <!-- TODO: сюда стоит добавить реальные скриншоты ПлатОН (1600x1000), когда их можно будет показывать -->
-  <div class="hpan">
-    <div class="hpan-track">
-      <div class="hpan-intro"><h3>Что построили</h3><p>Восемь частей, которые работают как одна система.</p></div>
-{hcards}
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="stack-groups" data-stagger>
-      <div class="sg"><h3>Клиент</h3><div class="chips">{chips(['Next.js 15','React 19','Tailwind 4','React Native','LiveKit','Excalidraw','Yjs'])}</div></div>
-      <div class="sg"><h3>Сервер</h3><div class="chips">{chips(['Go 1.25','Fiber v3','WebSocket','PostgreSQL 16','Redis','S3 (MinIO)','Python 3.12','FastAPI'])}</div></div>
-      <div class="sg"><h3>Инфраструктура</h3><div class="chips">{chips(['Docker','Kubernetes','nginx','GitHub Actions','API ФНС','ЮKassa','Web Push'])}</div></div>
-    </div>
-    <p class="note" data-reveal>Цифры по нагрузке и выручке опубликуем после запуска. Писать их сейчас было бы выдумкой.</p>
-  </div>
-</section>
-
-''' + final('Ваш проект может быть следующим','Расскажите о задаче в Telegram или WhatsApp. Первая консультация 30 минут, бесплатно.')
+''' + final('Покажем работы на созвоне','Напишите в Telegram или WhatsApp, расскажите о задаче. Подберём похожие проекты и покажем их за 30 минут.')
 page('projects.html','Проекты | Манго',
-     'Проекты веб-студии Манго: платформа для репетиторов ПлатОН. Веб, мобильное приложение, сервер и Telegram-бот.',
+     'Проекты веб-студии Манго. Примеры работ под вашу задачу покажем на бесплатной консультации.',
      projects_body)
 
 # ═════════ Юридическая информация ═════════

@@ -6,7 +6,7 @@
 site/
   index.html      главная
   prices.html     общие цены «от»
-  projects.html   проекты: ПлатОН
+  projects.html   проекты (пока заглушка с призывом записаться)
   legal.html      реквизиты, условия, оферта, персональные данные
   styles.css      вся вёрстка и CSS-анимации
   assets/mango.svg  векторный знак и favicon по референсу
@@ -45,9 +45,7 @@ cd site && python3 -m http.server 8080
 | Услуги | плитки разного размера, подсветка под курсором |
 | Манифест | текст проявляется по словам в такт прокрутке |
 | Факты | счётчики досчитывают до значения |
-| Кейс на главной | левая колонка закреплена, пункты справа появляются по очереди |
 | Этапы | карточки наезжают друг на друга стопкой |
-| Проекты | горизонтальная лента, которая листается прокруткой вниз |
 | Цены | оглавление подсвечивает текущий раздел, строки выезжают по очереди |
 | Везде | переходы между страницами (View Transitions), шапка прячется при прокрутке вниз, полоса прогресса, кнопки тянутся к курсору, окно «Записаться» раскрывается от кнопки |
 
@@ -58,9 +56,8 @@ cd site && python3 -m http.server 8080
 
 ## Что заполнить перед публикацией
 
-- Реальные скриншоты ПлатОН (в `projects.html` оставлен комментарий TODO)
+- Добавить кейсы на страницу `projects.html`
 - Проверить у юриста раздел «Персональные данные»
-- Согласовать публикацию кейса ПлатОН, если по нему есть NDA
 - `favicon`, `og:image`, `robots.txt`, `sitemap.xml`, Метрика
 
 ## GitHub Pages
@@ -69,3 +66,17 @@ cd site && python3 -m http.server 8080
 В настройках репозитория: Settings → Pages → Deploy from a branch → main → / (root) → Save.
 Адрес после публикации: https://nobodyyy-dev.github.io/mango/
 Файл `.nojekyll` отключает обработку Jekyll для статического сайта.
+
+## Хостинг и деплой
+
+- Сервер: Beget VPS `mango-site`, 91.229.90.238, Ubuntu 24.04, nginx, HTTPS от Let's Encrypt (продлевается автоматически)
+- Домен: https://mango-studio.tech (A-записи `@` и `www` в DNS Beget)
+- Сайт лежит в `/var/www/mango-studio.tech`, конфиг nginx: `/etc/nginx/sites-available/mango-studio.tech`
+- CI/CD: `.github/workflows/deploy.yml`. При пуше в `main` GitHub Actions копирует файлы на сервер через rsync под пользователем `deploy`.
+  В настройках репозитория нужен секрет `DEPLOY_SSH_KEY`: закрытый ключ `~/.ssh/mango_deploy` с компьютера, где его создали.
+
+Ручной деплой без CI:
+
+```bash
+rsync -az --delete --exclude '.git' --exclude '.github' --exclude '_build.py' --exclude 'README.md' -e "ssh -i ~/.ssh/mango_deploy" ./ deploy@91.229.90.238:/var/www/mango-studio.tech/
+```

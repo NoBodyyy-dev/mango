@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Настроить SSH
+        run: |
+          install -d -m 700 ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          # ключ сервера mango-site (Beget VPS 91.229.90.238)
+          echo "91.229.90.238 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH2ck7QjeDzLPkkJikNiEtO8j/H/GYY9aEOkQLcUixmm" > ~/.ssh/known_hosts
+
+      - name: Выложить сайт
+        run: |
+          rsync -az --delete \
+            --exclude '.git' --exclude '.github' --exclude '.gitignore' \
+            --exclude '_build.py' --exclude 'README.md' --exclude '.DS_Store' \
+            -e "ssh -i ~/.ssh/deploy_key" \
+            ./ deploy@91.229.90.238:/var/www/mango-studio.tech/
+
+      - name: Проверить, что сайт отвечает
+        run: curl -fsS -o /dev/null https://mango-studio.tech/
